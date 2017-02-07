@@ -12,3 +12,13 @@ Perl open source home automation program. It's fun, it's free, and it's entirely
 
 * Active Development Repository - [GitHub hollie/misterhouse](https://github.com/hollie/misterhouse)
 
+
+Docker
+======
+
+Normal Execution:
+docker run -v /c/Projects/mh/local:/usr/src/misterhouse/local -t -i zonyl/misterhouse
+
+Bash Shell:
+docker run -v /c/Projects/mh/local:/usr/src/misterhouse/local -t -i zonyl/misterhouse /sbin/my_init -- bash -l
+
