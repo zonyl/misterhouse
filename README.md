@@ -17,7 +17,7 @@ Docker
 ======
 
 Normal Execution:
-docker run -v /c/Projects/mh/local:/usr/src/misterhouse/local -t -i zonyl/misterhouse
+docker run -P -v /c/Projects/mh/local:/usr/src/misterhouse/local -t -i zonyl/misterhouse
 
 Bash Shell:
 docker run -v /c/Projects/mh/local:/usr/src/misterhouse/local -t -i zonyl/misterhouse /sbin/my_init -- bash -l
