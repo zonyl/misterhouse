@@ -4,8 +4,6 @@ LABEL maintainer "Jason Sharpee <jason@sharpee.com>"
 EXPOSE 8080
 ENV mh_parms=/usr/src/misterhouse/local/mh.private.ini
 
-RUN mkdir /usr/src/misterhouse/local
-VOLUME ['/usr/src/misterhouse/local']
 
 RUN [ "apt-get", "-q", "update" ]
 RUN [ "apt-get", "-qy", "--force-yes", "upgrade" ]
@@ -20,5 +18,8 @@ RUN [ "apt-get", "clean" ]
 RUN [ "rm", "-rf", "/var/lib/apt/lists/*", "/tmp/*", "/var/tmp/*" ]
 
 COPY . /usr/src/misterhouse
+RUN mkdir /usr/src/misterhouse/local
+VOLUME ['/usr/src/misterhouse/local']
+
 WORKDIR /usr/src/misterhouse/bin
 CMD [ "perl", "./mh" ]
