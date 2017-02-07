@@ -12,7 +12,9 @@ RUN [ "apt-get", "install", "-qy", "--force-yes", \
       "perl", \
       "build-essential", \
       "libgd-gd2-perl", \
-      
+      "libswitch-perl", \
+      "perl-tk", \
+      "libaudio-mixer-perl", \
       "cpanminus" ]
 RUN [ "apt-get", "clean" ]
 RUN [ "rm", "-rf", "/var/lib/apt/lists/*", "/tmp/*", "/var/tmp/*" ]
