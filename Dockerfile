@@ -3,6 +3,8 @@ LABEL maintainer "Jason Sharpee <jason@sharpee.com>"
 
 EXPOSE 8080
 ENV mh_parms=/usr/src/misterhouse/local/mh.private.ini
+
+RUN mkdir /usr/src/misterhouse/local
 VOLUME ['/usr/src/misterhouse/local']
 
 RUN [ "apt-get", "-q", "update" ]
@@ -11,6 +13,8 @@ RUN [ "apt-get", "-qy", "--force-yes", "dist-upgrade" ]
 RUN [ "apt-get", "install", "-qy", "--force-yes", \
       "perl", \
       "build-essential", \
+      "libgd-gd2-perl", \
+      
       "cpanminus" ]
 RUN [ "apt-get", "clean" ]
 RUN [ "rm", "-rf", "/var/lib/apt/lists/*", "/tmp/*", "/var/tmp/*" ]
