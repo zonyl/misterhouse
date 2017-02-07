@@ -17,4 +17,4 @@ RUN [ "rm", "-rf", "/var/lib/apt/lists/*", "/tmp/*", "/var/tmp/*" ]
 
 COPY . /usr/src/misterhouse
 WORKDIR /usr/src/misterhouse/bin
-CMD [ "perl", "./bin/mh" ]
+CMD [ "perl", "./mh" ]
