@@ -15,9 +15,11 @@ RUN [ "apt-get", "install", "-qy", "--force-yes", \
       "libswitch-perl", \
       "perl-tk", \
       "libaudio-mixer-perl", \
-      "cpanminus" ]
+      "cpanminus", \
+      "libexpat1-dev" ]
 RUN [ "apt-get", "clean" ]
 RUN [ "rm", "-rf", "/var/lib/apt/lists/*", "/tmp/*", "/var/tmp/*" ]
+RUN [ "cpanm", "Amazon::SNS" ]
 
 COPY . /usr/src/misterhouse
 RUN mkdir /usr/src/misterhouse/local
