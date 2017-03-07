@@ -13,8 +13,8 @@ RUN [ "apt-get", "install", "-qy", "--force-yes", \
       "build-essential", \
       "libgd-gd2-perl", \
       "libswitch-perl", \
-      "perl-tk",
-      "libwww-perl",
+      "perl-tk", \
+      "libwww-perl", \
       "libcgi-pm-perl", \
       "libaudio-mixer-perl", \
       "cpanminus", \
